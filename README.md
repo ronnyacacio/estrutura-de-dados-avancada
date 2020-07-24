@@ -1,5 +1,13 @@
-Para compilar no terminal do Linux:
-g++ -Wall avl.cpp main.cpp -o main
+<h1 align="center">
+  <img alt="ronnyacacio.dev" title="#delicinha" src=".github/three.png" width="300px"/>
+</h1>
 
-Para executar:
-./main
+## 💻 Projeto
+
+Todas as implementações da disciplina de Estrutura de dados avançada.
+
+### 💥 Test você mesmo!
+
+Em cada pasta terá um Readme com os comandos para teste.
+
+<br />
