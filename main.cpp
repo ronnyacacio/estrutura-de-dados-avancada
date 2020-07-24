@@ -11,7 +11,7 @@ int main()
 
   while (op != 8)
   {
-    cout << "----------------------------\n";
+    cout << "\n----------------------------\n";
     cout << "Implementação da Árvore AVL.\n";
     cout << "----------------------------\n";
     cout << "1. Inserir elemento na árvore\n";
@@ -22,7 +22,7 @@ int main()
     cout << "6. Número de folhas da árvore\n";
     cout << "7. Valor máximo e mínimo da árvore\n";
     cout << "8. Sair\n";
-
+    cout << "Entre com sua escolha ";
     cin >> op;
 
     if (op == 1)
