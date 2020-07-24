@@ -6,7 +6,7 @@
 
 Todas as implementações da disciplina de Estrutura de dados avançada.
 
-### 💥 Test você mesmo!
+### 💥 Teste você mesmo!
 
 Em cada pasta terá um Readme com os comandos para teste.
 
