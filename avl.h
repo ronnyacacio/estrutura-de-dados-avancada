@@ -4,18 +4,22 @@
 
 struct Node;
 
-Node* avl_insert(Node *node, Tkey key, Tvalue value);
-Node* avl_delete(Node *node, Tkey key);
+Node *avl_insert(Node *node, Tkey key, Tvalue value);
+Node *avl_delete(Node *node, Tkey key);
 
 Tkey avl_getKey(Node *node);
 Tvalue avl_getValue(Node *node);
 Node *avl_search(Node *node, Tkey key);
 void avl_preorder(Node *node);
 void avl_inorder(Node *node);
+void avl_postorder(Node *node);
 void avl_level_traversal(Node *node);
 int avl_height(Node *node);
+int avl_leaf(Node *node);
+Node *avl_minimum(Node *node);
+Node *avl_maximum(Node *node);
 int avl_size(Node *node);
 bool avl_empty(Node *node);
 Node *avl_clear(Node *node);
 
-#endif 
+#endif

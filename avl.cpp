@@ -24,6 +24,16 @@ Tvalue avl_getValue(Node *node)
   return node->value;
 }
 
+int avl_leaf(Node *node)
+{
+  if (node == nullptr)
+    return 0;
+  if (node->left == nullptr && node->right == nullptr)
+    return 1;
+  else
+    return avl_leaf(node->left) + avl_leaf(node->right);
+}
+
 Node *avl_search(Node *node, Tkey key)
 {
   if (node == nullptr)
@@ -56,12 +66,38 @@ void avl_inorder(Node *node)
   }
 }
 
+void avl_postorder(Node *node)
+{
+  if (node != nullptr)
+  {
+    avl_postorder(node->left);
+    avl_postorder(node->right);
+    cout << "(" << node->key << ", " << node->value << ")" << endl;
+  }
+}
+
 int avl_height(Node *node)
 {
   if (node == nullptr)
     return 0;
   else
     return node->height;
+}
+
+Node *avl_minimum(Node *node)
+{
+  if (node != nullptr && node->left != nullptr)
+    return avl_minimum(node->left);
+  else
+    return node;
+}
+
+Node *avl_maximum(Node *node)
+{
+  if (node != nullptr && node->right != nullptr)
+    return avl_maximum(node->right);
+  else
+    return node;
 }
 
 int balance(Node *node)
@@ -120,10 +156,11 @@ Node *leftRotation(Node *node)
 }
 //--------------codes rotations--------------//
 
-Node *allocateNode(Tkey key)
+Node *allocateNode(Tkey key, Tvalue value)
 {
   Node *node = new Node;
   node->key = key;
+  node->value = value;
   node->left = nullptr;
   node->right = nullptr;
   node->height = 1;
@@ -154,14 +191,14 @@ Node *fixup_node(Node *p, Tkey key)
   return p;
 }
 
-Node *insert(Node *p, Tkey key)
+Node *avl_insert(Node *p, Tkey key, Tvalue value)
 {
   if (p == nullptr)
-    return allocateNode(key);
+    return allocateNode(key, value);
   if (key < p->key)
-    p->left = insert(p->left, key);
+    p->left = avl_insert(p->left, key, value);
   else if (key > p->key)
-    p->right = insert(p->right, key);
+    p->right = avl_insert(p->right, key, value);
   else
     return p; // não permite chaves repetidas
   // atualiza altura deste ancestral p
