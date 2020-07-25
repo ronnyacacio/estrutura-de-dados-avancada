@@ -59,7 +59,7 @@ int main()
         cout << "\nO valor requerido não está presente nessa árvore\n\n";
     }
     else if (op == 7)
-      cout << "A altura da árvore é: " << avl_height(root) << endl;
+      cout << "\nA altura da árvore é: " << avl_height(root) << endl;
   }
 
   cout << "\nDestruindo a arvore...\n";
